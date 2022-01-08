@@ -35,7 +35,7 @@
 
       if (Complications != null) {
         let PlacementRadius    = outerRadius * 0.4;
-        let ComplicationRadius = outerRadius * 0.2;
+        let ComplicationRadius = outerRadius * 0.3/2;
 
         let sin30 = 0.5;
         let sin60 = 0.866;
