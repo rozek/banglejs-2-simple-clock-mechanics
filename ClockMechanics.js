@@ -1,7 +1,6 @@
 (function () {
   exports.windUp = function windUp (Options, Settings) {
-    Options  = Options  || {};
-    Settings = Settings || {};
+    Options  = Options || {};
 
     let ClockSize     = Options.size  || require('https://raw.githubusercontent.com/rozek/banglejs-2-simple-clock-size/main/ClockSize.js');
     let Background    = Options.background || undefined;
@@ -9,9 +8,9 @@
     let ClockHands    = Options.hands || require('https://raw.githubusercontent.com/rozek/banglejs-2-simple-clock-hands/main/ClockHands.js');
     let Complications = Options.complications || undefined;
 
-    Settings = Object.assign(Settings, {
-       Foreground:'Theme', Background:'Theme', Seconds:'#FFFF00'
-    });
+    Settings = Object.assign({
+      Foreground:'Theme', Background:'Theme', Seconds:'#FFFF00'
+    }, Settings || {});
 
     Bangle.loadWidgets();
 
@@ -24,6 +23,7 @@
     function refreshDisplay () {
       g.reset();
       if (Background == null) {
+        g.setBgColor(Settings.Background === 'Theme' ? g.theme.bg : Settings.Background || '#FFFFFF');
         g.clear();
       } else {
         Background.draw();
@@ -40,34 +40,34 @@
         let sin60 = 0.866;
 
         if (Complications.t != null) {
-          Complications.t.draw(CenterX,CenterY-sin60*Radius);
+          Complications.t.draw(CenterX,CenterY-sin60*Radius, Settings);
         } else {
           if (Complications.tl != null) {
-            Complications.tl.draw(CenterX-sin30*Radius,CenterY-sin60*Radius);
+            Complications.tl.draw(CenterX-sin30*Radius,CenterY-sin60*Radius, Settings);
           }
 
           if (Complications.tr != null) {
-            Complications.tr.draw(CenterX+sin30*Radius,CenterY-sin60*Radius);
+            Complications.tr.draw(CenterX+sin30*Radius,CenterY-sin60*Radius, Settings);
           }
         }
 
         if (Complications.l != null) {
-          Complications.l.draw(CenterX-Radius,CenterY);
+          Complications.l.draw(CenterX-Radius,CenterY, Settings);
         }
 
         if (Complications.r != null) {
-          Complications.r.draw(CenterX+Radius,CenterY);
+          Complications.r.draw(CenterX+Radius,CenterY, Settings);
         }
 
         if (Complications.b != null) {
-          Complications.b.draw(CenterX,CenterY+sin60*Radius);
+          Complications.b.draw(CenterX,CenterY+sin60*Radius, Settings);
         } else {
           if (Complications.bl != null) {
-            Complications.bl.draw(CenterX-sin30*Radius,CenterY+sin60*Radius);
+            Complications.bl.draw(CenterX-sin30*Radius,CenterY+sin60*Radius, Settings);
           }
 
           if (Complications.br != null) {
-            Complications.br.draw(CenterX+sin30*Radius,CenterY+sin60*Radius);
+            Complications.br.draw(CenterX+sin30*Radius,CenterY+sin60*Radius, Settings);
           }
         }
       }
