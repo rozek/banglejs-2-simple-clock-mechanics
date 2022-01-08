@@ -34,40 +34,65 @@
       ClockFace.draw(Settings, CenterX,CenterY, outerRadius);
 
       if (Complications != null) {
-        let Radius = outerRadius * 0.4;
+        let PlacementRadius    = outerRadius * 0.4;
+        let ComplicationRadius = outerRadius * 0.2;
 
         let sin30 = 0.5;
         let sin60 = 0.866;
 
         if (Complications.t != null) {
-          Complications.t.draw(CenterX,CenterY-sin60*Radius, Settings);
+          Complications.t.draw(
+            CenterX,CenterY-sin60*PlacementRadius,
+            ComplicationRadius, Settings
+          );
         } else {
           if (Complications.tl != null) {
-            Complications.tl.draw(CenterX-sin30*Radius,CenterY-sin60*Radius, Settings);
+            Complications.tl.draw(
+              CenterX-sin30*PlacementRadius,CenterY-sin60*PlacementRadius,
+              ComplicationRadius, Settings
+            );
           }
 
           if (Complications.tr != null) {
-            Complications.tr.draw(CenterX+sin30*Radius,CenterY-sin60*Radius, Settings);
+            Complications.tr.draw(
+              CenterX+sin30*PlacementRadius,CenterY-sin60*PlacementRadius,
+              ComplicationRadius, Settings
+            );
           }
         }
 
         if (Complications.l != null) {
-          Complications.l.draw(CenterX-Radius,CenterY, Settings);
+          Complications.l.draw(
+            CenterX-PlacementRadius,CenterY,
+            ComplicationRadius, Settings
+          );
         }
 
         if (Complications.r != null) {
-          Complications.r.draw(CenterX+Radius,CenterY, Settings);
+          Complications.r.draw(
+            CenterX+PlacementRadius,CenterY,
+            ComplicationRadius, Settings
+          );
         }
 
         if (Complications.b != null) {
-          Complications.b.draw(CenterX,CenterY+sin60*Radius, Settings);
+          Complications.b.draw(
+            CenterX,CenterY+sin60*PlacementRadius,
+            ComplicationRadius, Settings
+          );
         } else {
           if (Complications.bl != null) {
-            Complications.bl.draw(CenterX-sin30*Radius,CenterY+sin60*Radius, Settings);
+            Complications.bl.draw(
+              CenterX-sin30*PlacementRadius,CenterY+sin60*PlacementRadius,
+              ComplicationRadius, Settings
+            );
           }
 
           if (Complications.br != null) {
-            Complications.br.draw(CenterX+sin30*Radius,CenterY+sin60*Radius, Settings);
+            Complications.br.draw(
+              CenterX+sin30*PlacementRadius,CenterY+sin60*PlacementRadius,
+              ComplicationRadius, Settings
+            );
           }
         }
       }
