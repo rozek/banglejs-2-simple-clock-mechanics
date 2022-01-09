@@ -4,7 +4,7 @@
 
     let ClockSize     = Options.size  || require('https://raw.githubusercontent.com/rozek/banglejs-2-simple-clock-size/main/ClockSize.js');
     let Background    = Options.background || undefined;
-    let ClockFace     = Options.face  || require('https://raw.githubusercontent.com/rozek/banglejs-2-no-clock-face/main/ClockFace.js');
+    let ClockFace     = Options.face;
     let ClockHands    = Options.hands || require('https://raw.githubusercontent.com/rozek/banglejs-2-simple-clock-hands/main/ClockHands.js');
     let Complications = Options.complications || undefined;
 
@@ -31,7 +31,9 @@
 
       Bangle.drawWidgets();
 
-      ClockFace.draw(Settings, CenterX,CenterY, outerRadius);
+      if (ClockFace != null) {
+        ClockFace.draw(Settings, CenterX,CenterY, outerRadius);
+      }
 
       if (Complications != null) {
         let PlacementRadius    = outerRadius * 0.4;
