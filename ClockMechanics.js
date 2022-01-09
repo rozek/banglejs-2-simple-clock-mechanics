@@ -9,7 +9,7 @@
     let Complications = Options.complications || undefined;
 
     Settings = Object.assign({
-      Foreground:'Theme', Background:'Theme', Seconds:'#FFFF00'
+      Foreground:'Theme', Background:'Theme'
     }, Settings || {});
 
     Bangle.loadWidgets();
@@ -103,7 +103,7 @@
       let Minutes = now.getMinutes();
       let Seconds = now.getSeconds();
 
-      let withSeconds = Bangle.isLCDOn();
+      let withSeconds = (Settings.Seconds != null) && Bangle.isLCDOn();
       ClockHands.draw(
         Settings, CenterX,CenterY, outerRadius,
         Hours,Minutes,(withSeconds ? Seconds : null)
