@@ -2,7 +2,7 @@
   exports.windUp = function windUp (Options, Settings) {
     Options  = Options || {};
 
-    let ClockSize     = Options.size  || require('https://raw.githubusercontent.com/rozek/banglejs-2-simple-clock-size/main/ClockSize.js');
+    let ClockSize     = Options.size  || require('https://raw.githubusercontent.com/rozek/banglejs-2-smart-clock-size/main/ClockSize.js');
     let Background    = Options.background || undefined;
     let ClockFace     = Options.face;
     let ClockHands    = Options.hands || require('https://raw.githubusercontent.com/rozek/banglejs-2-simple-clock-hands/main/ClockHands.js');
