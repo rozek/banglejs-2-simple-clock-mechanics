@@ -56,7 +56,7 @@ and produces the following clock:
 
 ![](minimalExample.png)
 
-A more typical example loks like:
+A more typical example looks like:
 
 ```
 let Clockwork = require('https://raw.githubusercontent.com/rozek/banglejs-2-simple-clockwork/main/Clockwork.js');
