@@ -5,7 +5,7 @@
     let ClockSize     = Options.size  || require('https://raw.githubusercontent.com/rozek/banglejs-2-smart-clock-size/main/ClockSize.js');
     let Background    = Options.background || undefined;
     let ClockFace     = Options.face;
-    let ClockHands    = Options.hands || require('https://raw.githubusercontent.com/rozek/banglejs-2-simple-clock-hands/main/ClockHands.js');
+    let ClockHands    = Options.hands || require('https://raw.githubusercontent.com/rozek/banglejs-2-rounded-clock-hands/main/ClockHands.js');
     let Complications = Options.complications || undefined;
 
     Settings = Object.assign({
