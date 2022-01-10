@@ -26,7 +26,7 @@
         g.setBgColor(Settings.Background === 'Theme' ? g.theme.bg : Settings.Background || '#FFFFFF');
         g.clear();
       } else {
-        Background.draw();
+        Background.draw(Settings);
       }
 
       Bangle.drawWidgets();
