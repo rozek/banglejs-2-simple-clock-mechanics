@@ -128,7 +128,7 @@
       let Seconds = now.getSeconds();
 
       try {
-        let withSeconds = (Settings.Seconds != null) && Bangle.isLCDOn();
+        let withSeconds = (Settings.Seconds != null) && ! Bangle.isLocked();
         ClockHands.draw(
           Settings, CenterX,CenterY, outerRadius,
           Hours,Minutes,(withSeconds ? Seconds : null)
@@ -143,7 +143,7 @@
 
     Timer = setTimeout(refreshDisplay, 500);       // enqueue first draw request
 
-    Bangle.on('lcdPower', () => {
+    Bangle.on('lock', () => {
       if (Timer != null) { clearTimeout(Timer); Timer = undefined; }
       refreshDisplay();
     });
