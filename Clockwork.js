@@ -8,9 +8,7 @@
     let ClockHands    = Options.hands || require('https://raw.githubusercontent.com/rozek/banglejs-2-rounded-clock-hands/main/ClockHands.js');
     let Complications = Options.complications || undefined;
 
-    Settings = Object.assign({
-      Foreground:'Theme', Background:'Theme'
-    }, Settings || {});
+    Settings = Settings || {};
 
     Bangle.loadWidgets();
 
