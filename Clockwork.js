@@ -1,4 +1,4 @@
-(function () {
+;(function () {
   exports.windUp = function windUp (Options, Settings) {
     Options  = Options || {};
 
@@ -24,7 +24,7 @@
       g.reset();
       if (Background == null) {
         g.setBgColor(Settings.Background === 'Theme' ? g.theme.bg : Settings.Background || '#FFFFFF');
-        g.clear();
+        g.clear(false);
       } else {
         Background.draw(Settings);
       }
