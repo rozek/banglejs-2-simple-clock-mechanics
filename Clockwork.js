@@ -61,8 +61,8 @@
               Complications.tl.draw(
                 CenterX-sin30*PlacementRadius,CenterY-sin60*PlacementRadius,
                 ComplicationRadius, Settings
-          } catch (Signal) { print('Error drawing complication at position "tl": ',Signal); }
               );
+            } catch (Signal) { print('Error drawing complication at position "tl": ',Signal); }
           }
 
           if (Complications.tr != null) {
@@ -127,8 +127,8 @@
       let Minutes = now.getMinutes();
       let Seconds = now.getSeconds();
 
+      let withSeconds = (Settings.Seconds != null) && ! Bangle.isLocked();
       try {
-        let withSeconds = (Settings.Seconds != null) && ! Bangle.isLocked();
         ClockHands.draw(
           Settings, CenterX,CenterY, outerRadius,
           Hours,Minutes,(withSeconds ? Seconds : null)
