@@ -144,7 +144,6 @@
     Timer = setTimeout(refreshDisplay, 500);       // enqueue first draw request
 
     Bangle.on('lock', () => {
-print('Bangle.isLocked',Bangle.isLocked());
       if (Timer != null) { clearTimeout(Timer); Timer = undefined; }
       refreshDisplay();
     });
