@@ -8,7 +8,7 @@ This module implements a simple "clockwork" for analog clocks based on the [Anal
 
 Within a clock implementation, the module may be used as follows:
 
-```
+```javascript
 let Clockwork = require(https://raw.githubusercontent.com/rozek/banglejs-2-simple-clockwork/main/Clockwork.js);
 Clockwork.windUp({
   size:      <opt. clock size calculator>,
@@ -47,7 +47,7 @@ The actually available space for any complication depends on the actual radius o
 
 A minimal example for an analog clock using this clockwork looks as follows:
 
-```
+```javascript
 let Clockwork = require('https://raw.githubusercontent.com/rozek/banglejs-2-simple-clockwork/main/Clockwork.js');
 Clockwork.windUp();
 ```
@@ -58,7 +58,7 @@ and produces the following clock:
 
 A more typical example looks like:
 
-```
+```javascript
 let Clockwork = require('https://raw.githubusercontent.com/rozek/banglejs-2-simple-clockwork/main/Clockwork.js');
 
 Clockwork.windUp({
